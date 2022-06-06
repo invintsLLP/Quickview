@@ -10,7 +10,7 @@ quickview.js
 <b>-add vue js before the </head> tag in theme liquid</b>
 <b>theme.liquid</b>
 <script src="{{ 'quickview.js' | asset_url }}" defer></script><br>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script><br>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script><br><br>
 
--add this both snippet and js on theme liquid.<br><br>
+-add this both snippet and js on theme liquid.<br>
 {% include 'quickview_snippet' %}
