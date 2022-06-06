@@ -1,0 +1,9 @@
+<div class=" quick-view ">
+    <div class="product-card__quickview mt-2">
+        <a class="js-btn-quickview btn btn--quickview" href="javascript:void(0);" data-bs-placement="top" data-handle="{{ card_product.handle }}" data-id= "{{card_product.id}}" title="quickview">
+            <span>quickview</span>
+        </a>
+    </div>
+</div>
+
+NOTE: add this button html in product cart snippet.
