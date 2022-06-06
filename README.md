@@ -7,13 +7,7 @@ quickview_snippet.liquid<br>
 quickview.js
 
 <b>-Add button html in product card snippets<br></b>
-<div class=" quick-view ">
-  <div class="product-card__quickview mt-2">
-    <a class="js-btn-quickview btn btn--quickview" href="javascript:void(0);" data-bs-placement="top" data-handle="{{ card_product.handle }}" data-id= "{{card_product.id}}" title="quickview">
-      <span>quickview</span>
-    </a>
-  </div>
-</div><br><br>
+quickview-btn-html from this file<br><br>
 
 <b>-Add vue js before the </head> tag in theme liquid</b>
 <b>theme.liquid</b>
