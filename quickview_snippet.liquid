@@ -1,0 +1,74 @@
+{% raw %}
+<div class="quickview-container" id="quickview_viewer">
+  <div class="quickview-wrapper popup" :data-value="json.id" :data-handle="json.handle">
+
+    <div class="quickview-container">
+      <div class="quickview-img">
+        <img :src="json.image.src" alt="">
+      </div>
+      <div class="quickview-info">
+        <div class="quickview-title">
+          <h1>   {{json.title}}</h1>
+        </div>
+        <div class="quickview-price">{{json.variants[0].price | money}}</div>
+        <div class="quickview-form">
+          <form method="post" action="/cart/add" id="product-form-"
+                accept-charset="UTF-8" class="form"
+                enctype="multipart/form-data" novalidate="novalidate"
+                data-type="add-to-cart-form"><input type="hidden"
+                                                    name="form_type" value="product"><input type="hidden"
+                                                                                            name="utf8" value="✓"><input type="hidden" name="id"
+                                                                                                                         value="42816746651863">
+            <input type="hidden" name="id" :value="json.variants[0].id">
+
+            <div class="product-form__buttons">
+              <button type="submit" name="add" class="product-form__submit
+                                                      button button--full-width button--secondary">
+                <span>Add to cart
+                </span>
+
+              </button>
+            </div></form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endraw %}
+
+<style>
+
+  #quickview_viewer.open-quickview{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #quickview_viewer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+
+  #quickview_viewer img {
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+note: you can customize this html as you want but do not change main class and id's.
+      such as id="quickview_viewer".
