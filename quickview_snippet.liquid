@@ -16,16 +16,20 @@
                 accept-charset="UTF-8" class="form"
                 enctype="multipart/form-data" novalidate="novalidate"
                 data-type="add-to-cart-form">
-                <input type="hidden" name="form_type" value="product">
-                <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="form_type" value="product">
+            <input type="hidden" name="utf8" value="✓">
             <input type="hidden" name="id" :value="json.variants[0].id">
 
-            <div class="product-form__buttons">
-              <button type="submit" name="add" class="product-form__submit
-                                                      button button--full-width button--secondary">
-                <span>Add to cart
-                </span>
+            <select name="id" id="Variants" class="select__select" @change="onChange($event)">
 
+              <option v-for="variant in json.variants" :key="variant" :value="variant.id" >
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            </select>
+
+            <div class="product-form__buttons">
+              <button type="submit" name="add" class="product-form__submit button button--full-width button--secondary">
+                <span>Add to cart</span>
               </button>
             </div></form>
         </div>
@@ -68,6 +72,3 @@
     height: 50%;
   }
 </style>
-
-note: you can customize this html as you want but do not change main class and id's.
-      such as id="quickview_viewer".
